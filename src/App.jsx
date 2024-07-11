@@ -8,10 +8,11 @@ import Register from "./views/Register/Register.jsx";
 import Products from "./views/Products/Products.jsx";
 import Profile from "./views/Profile/Profile.jsx";
 import "./App.css";
-import PostPlanta from "./views/PostPlanta/PostPlanta.jsx";
 import Cart from "./views/Cart/Cart.jsx";
 import MyPlants from "./views/Profile/MyPlants.jsx";
 import Orders from "./views/Profile/Orders.jsx";
+import "bootstrap/dist/css/bootstrap.min.css";
+import Publish from "./views/Publish/Publish.jsx";
 
 const App = () => {
   return (
@@ -23,10 +24,10 @@ const App = () => {
         <Route path="/register" element={<Register />} />
         <Route path="/products" element={<Products />} />
         <Route path="/profile" element={<Profile />} />
-        <Route path="/myPlants" element={<MyPlants />} />
+        <Route path="/my-plants" element={<MyPlants />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/orders" element={<Orders />} />
-        <Route path="/publish" element={<PostPlanta />} />
+        <Route path="/publish" element={<Publish />} />
       </Routes>
     </div>
   );

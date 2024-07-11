@@ -1,18 +1,41 @@
 import React, { createContext, useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import api from "../../config/configAxios.jsx";
 
 export const AuthContext = createContext();
 
-//Se define el estado de user, y se define como null
-export const AuthProvider = ({ children }) => {
+const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
+  const navigate = useNavigate();
 
-  const login = (email, password) => {
-    // Lógica de autenticación simulada
-    setUser({ email });
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      api.defaults.headers.Authorization = `Bearer ${token}`;
+      // Optionally fetch user info here
+    }
+  }, []);
+
+  const login = async (email, password) => {
+    const response = await api.post("/auth/login", { email, password });
+    const { token, user } = response.data;
+    localStorage.setItem("token", token);
+    api.defaults.headers.Authorization = `Bearer ${token}`;
+    setUser(user);
+    navigate("/");
+  };
+
+  const register = async (form) => {
+    const response = await api.post("/auth/register", form);
+    const { token, user } = response.data;
+    localStorage.setItem("token", token);
+    api.defaults.headers.Authorization = `Bearer ${token}`;
+    setUser(user);
+    navigate("/");
   };
 
   return (
-    <AuthContext.Provider value={{ user, login }}>
+    <AuthContext.Provider value={{ user, login, register }}>
       {children}
     </AuthContext.Provider>
   );

@@ -1,5 +1,7 @@
 import { Container, Nav, Navbar, NavbarBrand } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css";
+import UserDropdown from "../UserDropdown/UserDropdown";
 
 function NavbarPlantiv() {
   return (
@@ -15,10 +17,8 @@ function NavbarPlantiv() {
 
             <NavLink to="/products">Productos</NavLink>
             <NavLink to="/cart">Carrito</NavLink>
-            <NavLink to="/profile">Perfil</NavLink>
             <NavLink to="/publish">Publicar</NavLink>
-            <NavLink to="/myPlants">Mis plantas</NavLink>
-            <NavLink to="/orders">Mis ordenes</NavLink>
+            <UserDropdown />
           </Nav>
         </Container>
       </Navbar>
