@@ -1,0 +1,26 @@
+.Navbar {
+  background-color: white;
+  border-top: solid 1rem #c1dbaf;
+  width: 100%;
+  margin: auto;
+}
+
+.containerNavbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: auto;
+  margin: auto;
+}
+.nav {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  align-items: center;
+}
+
+.navlinkNavbar {
+  text-decoration: none;
+  text-decoration-line: none;
+  color: black;
+}

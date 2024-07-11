@@ -1,0 +1,15 @@
+.ContainerRegister {
+  background-color: #dae8d0;
+  width: 35%;
+  height: 70vh;
+  border-radius: 3rem;
+  padding: 2rem;
+  text-align: center;
+}
+
+.formRegister {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  gap: 3rem;
+}

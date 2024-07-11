@@ -1,7 +1,7 @@
 // src/App.js
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import NavbarPlantiv from "./components/Navbar/Narvar.jsx";
+import NavbarPlantiv from "./components/Navbar/Navbar.jsx";
 import Home from "./views/Home/Home.jsx";
 import Login from "./views/Login/Login.jsx";
 import Register from "./views/Register/Register.jsx";
