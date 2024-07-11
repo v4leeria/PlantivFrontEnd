@@ -7,11 +7,9 @@ import Login from "./views/Login/Login.jsx";
 import Register from "./views/Register/Register.jsx";
 import Products from "./views/Products/Products.jsx";
 import Profile from "./views/Profile/Profile.jsx";
-import "./App.css";
 import Cart from "./views/Cart/Cart.jsx";
 import MyPlants from "./views/Profile/MyPlants.jsx";
 import Orders from "./views/Profile/Orders.jsx";
-import "bootstrap/dist/css/bootstrap.min.css";
 import Publish from "./views/Publish/Publish.jsx";
 
 const App = () => {

@@ -12,7 +12,7 @@ const AuthProvider = ({ children }) => {
     const token = localStorage.getItem("token");
     if (token) {
       api.defaults.headers.Authorization = `Bearer ${token}`;
-      // Optionally fetch user info here
+      // agregar el coso para recorrer la base de datos
     }
   }, []);
 
