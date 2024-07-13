@@ -1,5 +1,5 @@
 import React from "react";
-import ButtonProducts from "../../components/Buttons/ButtonProducts.jsx";
+import { ButtonProducts } from "../../components/Buttons/ButtonProducts.jsx";
 import "./Home.css";
 
 const Home = () => {
@@ -9,9 +9,7 @@ const Home = () => {
         <h1>¡Bienvenido al mundo de las plantas!</h1>
       </div>
       <br />
-      <ButtonProducts className="buttonProducts" to="/products">
-        Ver Productos
-      </ButtonProducts>
+      <ButtonProducts desc={"Ver productos"} to="/products" />
     </div>
   );
 };

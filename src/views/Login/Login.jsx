@@ -2,15 +2,19 @@
 import React, { useState, useContext } from "react";
 import { Form, Button, Container, Row, Col, Alert } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
-import { AuthContext } from "../../context/AuthContext/AuthContext.jsx";
+import { UserContext } from "../../context/UserContext/UserContext";
+import login from "../../assets/Json/login.json";
 
 const Login = () => {
   const [form, setForm] = useState({ email: "", password: "" });
-  const [error, setError] = useState(null);
-  const { login } = useContext(AuthContext);
+  const [error, setError] = useState(false);
+  const { setUserId, setRole, saveToken, makeRequest } =
+    useContext(UserContext);
   const navigate = useNavigate();
 
   const handleChange = (e) => {
+    console.log(e.target.name);
+    console.log(e.target.value);
     setForm({
       ...form,
       [e.target.name]: e.target.value,
@@ -20,10 +24,21 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await login(form.email, form.password);
+      const response = await makeRequest("post", login, form);
+      if (response.status === 200) {
+        const data = response.data; //obtener los datos de la respuesta
+        const token = data.token; //obtener el token almacenado dentro del cuerpo de data
+        const userId = data.userId; //obtner el id del usuario almacenado dentro de data
+        const userRole = data.userRole; //obtener el role almacenado dentro del cuerpo de data
+
+        saveToken(token);
+        setUserId(userId);
+        setRole(userRole);
+      }
       navigate("/");
     } catch (error) {
-      setError("Invalid email or password");
+      setError("No pasar"); //la respuesta del alert viene del backend
+      console.error(response.status);
     }
   };
 

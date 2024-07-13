@@ -1,9 +1,8 @@
-// src/pages/Profile.js
 import React, { useContext, useEffect, useState } from "react";
-import { AuthContext } from "../../context/AuthContext/AuthContext.jsx";
+import { UserContext } from "../../context/UserContext/UserContext";
 
 const Profile = () => {
-  const { user } = useContext(AuthContext);
+  const { user } = useContext(UserContext);
   const [orders, setOrders] = useState([]);
 
   useEffect(() => {
