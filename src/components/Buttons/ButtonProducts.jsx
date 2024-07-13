@@ -1,21 +1,16 @@
-import React, { useContext } from "react";
-import { AuthContext } from "../../context/AuthContext/AuthContext.jsx";
+import React from "react";
+import Button from "react-bootstrap/Button";
 import { useNavigate } from "react-router-dom";
 
-//to para definir la ruta en Home y Children el texto del boton
-const ButtonProducts = ({ to, children }) => {
-  const { user } = useContext(AuthContext);
+export const ButtonProducts = ({ desc, to }) => {
   const navigate = useNavigate();
-
-  const handleClick = () => {
-    if (!user) {
-      alert("Necesita iniciar sesión para ver productos.");
-    } else {
-      navigate(to);
-    }
+  const goTo = () => {
+    navigate(to);
   };
 
-  return <button onClick={handleClick}>{children}</button>;
+  return (
+    <Button variant="outline-secondary" onClick={goTo}>
+      {desc}
+    </Button>
+  );
 };
-
-export default ButtonProducts;
