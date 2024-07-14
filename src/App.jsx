@@ -9,7 +9,6 @@ import Products from "./views/Products/Products.jsx";
 import Profile from "./views/Profile/Profile.jsx";
 import Cart from "./views/Cart/Cart.jsx";
 import MyPlants from "./views/Profile/MyPlants.jsx";
-import Orders from "./views/Profile/Orders.jsx";
 import Publish from "./views/Publish/Publish.jsx";
 
 const App = () => {
@@ -24,7 +23,6 @@ const App = () => {
         <Route path="/profile" element={<Profile />} />
         <Route path="/my-plants" element={<MyPlants />} />
         <Route path="/cart" element={<Cart />} />
-        <Route path="/orders" element={<Orders />} />
         <Route path="/publish" element={<Publish />} />
       </Routes>
     </div>

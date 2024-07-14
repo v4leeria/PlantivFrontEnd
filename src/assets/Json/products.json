@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "name": "Planta 1",
+    "description": "Una planta muy bonita",
+
+    "price": 5000,
+    "image": "https://images.pexels.com/photos/11177966/pexels-photo-11177966.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+  },
+  {
+    "id": 2,
+    "name": "Planta 2",
+    "description": "Otra planta muy bonita",
+
+    "price": 4000,
+    "image": "https://images.pexels.com/photos/5264388/pexels-photo-5264388.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+  },
+  {
+    "id": 3,
+    "name": "Planta 2",
+    "description": "Otra planta muy bonita",
+
+    "price": 1500,
+    "image": "https://images.pexels.com/photos/3290584/pexels-photo-3290584.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+  },
+  {
+    "id": 4,
+    "name": "Planta 2",
+    "description": "Otra planta muy bonita",
+
+    "price": 2000,
+    "image": "https://images.pexels.com/photos/1084188/pexels-photo-1084188.jpeg"
+  },
+  {
+    "id": 5,
+    "name": "Planta 2",
+    "description": "Otra planta muy bonita",
+
+    "price": 3000,
+    "image": "https://images.pexels.com/photos/3290585/pexels-photo-3290585.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+  },
+  {
+    "id": 6,
+    "name": "Planta 2",
+    "description": "Otra planta muy bonita",
+
+    "price": 6000,
+    "image": "https://images.pexels.com/photos/10087935/pexels-photo-10087935.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+  },
+  {
+    "id": 7,
+    "name": "Planta 2",
+    "description": "Otra planta muy bonita",
+
+    "price": 2500,
+    "image": "https://images.pexels.com/photos/8790104/pexels-photo-8790104.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+  }
+]

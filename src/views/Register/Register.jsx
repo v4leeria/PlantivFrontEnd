@@ -2,8 +2,8 @@
 import React, { useState, useContext } from "react";
 import { Form, Button, Container, Row, Col, Alert } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
-import { AuthContext } from "../../context/AuthContext/AuthContext.jsx";
 import "./Register.css";
+import { UserContext } from "../../context/UserContext/UserContext";
 
 const Register = () => {
   const [form, setForm] = useState({
@@ -13,7 +13,7 @@ const Register = () => {
     password: "",
   });
   const [error, setError] = useState(null);
-  const { register } = useContext(AuthContext);
+  const { register } = useContext(UserContext);
   const navigate = useNavigate();
 
   const handleChange = (e) => {
