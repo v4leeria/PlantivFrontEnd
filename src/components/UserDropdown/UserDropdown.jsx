@@ -21,9 +21,6 @@ const UserDropdown = () => {
         <LinkContainer to="/profile">
           <DropdownItem>Mi Perfil</DropdownItem>
         </LinkContainer>
-        <LinkContainer to="/orders">
-          <DropdownItem>Mis Ordenes</DropdownItem>
-        </LinkContainer>
       </DropdownMenu>
     </Dropdown>
   );

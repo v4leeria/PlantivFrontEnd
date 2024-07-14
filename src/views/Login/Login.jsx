@@ -1,9 +1,9 @@
-// src/pages/Login.js
 import React, { useState, useContext } from "react";
 import { Form, Button, Container, Row, Col, Alert } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { UserContext } from "../../context/UserContext/UserContext";
-import login from "../../assets/Json/login.json";
+import login from "../../assets/Json/login.json"; // Importar JSON para pruebas
+import axios from "axios"; // Para solicitudes HTTP
 
 const Login = () => {
   const [form, setForm] = useState({ email: "", password: "" });
@@ -13,8 +13,8 @@ const Login = () => {
   const navigate = useNavigate();
 
   const handleChange = (e) => {
-    console.log(e.target.name);
-    console.log(e.target.value);
+    console.log(e.target.name); // Para depuración
+    console.log(e.target.value); // Para depuración
     setForm({
       ...form,
       [e.target.name]: e.target.value,
@@ -24,21 +24,33 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await makeRequest("post", login, form);
-      if (response.status === 200) {
-        const data = response.data; //obtener los datos de la respuesta
-        const token = data.token; //obtener el token almacenado dentro del cuerpo de data
-        const userId = data.userId; //obtner el id del usuario almacenado dentro de data
-        const userRole = data.userRole; //obtener el role almacenado dentro del cuerpo de data
+      // Simulación de inicio de sesión con un JSON de prueba
+      if (form.email === login.email && form.password === login.password) {
+        const token = "fakeToken"; // Simulación de un token
+        const userId = 1; // Simulación de un ID de usuario
+        const userRole = "user"; // Simulación de un rol de usuario
 
         saveToken(token);
         setUserId(userId);
         setRole(userRole);
+        navigate("/products"); // Redirigir a la página principal
+      } else {
+        setError("Credenciales incorrectas"); // Mostrar error si no coinciden
       }
-      navigate("/");
+
+      // En una implementación real, realiza una solicitud de inicio de sesión al backend
+      /*
+      const response = await axios.post('/api/login', form);
+      const { token, userId, userRole } = response.data;
+
+      saveToken(token);
+      setUserId(userId);
+      setRole(userRole);
+      navigate("/products"); // Redirigir a la página principal
+      */
     } catch (error) {
-      setError("No pasar"); //la respuesta del alert viene del backend
-      console.error(response.status);
+      setError("No pasar"); // La respuesta del alert viene del backend
+      console.error(error); // Imprimir error en la consola
     }
   };
 
