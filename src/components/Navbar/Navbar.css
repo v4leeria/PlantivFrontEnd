@@ -2,7 +2,8 @@
   background-color: white;
   border-top: solid 1rem #c1dbaf;
   width: 100%;
-  margin: auto;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
 .containerNavbar {
@@ -14,7 +15,7 @@
 }
 .nav {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   gap: 1rem;
   align-items: center;
 }
@@ -23,4 +24,8 @@
   text-decoration: none;
   text-decoration-line: none;
   color: black;
+}
+
+.navlinkNavbar:hover {
+  color: green; /* Cambia el color al pasar el ratón */
 }

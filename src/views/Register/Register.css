@@ -1,15 +1,34 @@
 .ContainerRegister {
   background-color: #dae8d0;
-  width: 35%;
-  height: 70vh;
+  width: 90%;
+  max-width: 550px;
   border-radius: 3rem;
   padding: 2rem;
   text-align: center;
+  font-size: small;
 }
 
 .formRegister {
   display: flex;
   justify-content: center;
-  text-align: center;
-  gap: 3rem;
+  gap: 1rem;
+}
+
+input::placeholder {
+  font-size: small; /* Tamaño de fuente del placeholder */
+  color: #888; /* Color del placeholder */
+}
+
+textarea::placeholder {
+  font-size: medium; /* Tamaño de fuente del placeholder */
+  color: #888; /* Color del placeholder */
+}
+
+/* Estilos responsivos */
+@media (min-width: 768px) {
+  .formRegister {
+    font-size: large;
+    display: flex;
+    justify-content: center;
+  }
 }

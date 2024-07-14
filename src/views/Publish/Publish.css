@@ -1,0 +1,17 @@
+.ContainerPublish {
+  background-color: #dae8d0;
+  max-width: 500px;
+  width: 70%;
+  height: auto;
+  border-radius: 3rem;
+  padding: 2rem;
+  margin-top: 3rem;
+  text-align: center;
+  font-size: small;
+}
+
+.formPublish {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}

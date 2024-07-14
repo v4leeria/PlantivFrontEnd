@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { UserContext } from "../../context/UserContext/UserContext";
 import login from "../../assets/Json/login.json"; // Importar JSON para pruebas
 import axios from "axios"; // Para solicitudes HTTP
+import "./Login.css";
 
 const Login = () => {
   const [form, setForm] = useState({ email: "", password: "" });
@@ -55,7 +56,7 @@ const Login = () => {
   };
 
   return (
-    <Container>
+    <Container className="ContainerLogin">
       <Row className="justify-content-md-center">
         <Col md={6}>
           <h1 className="text-center">Login</h1>

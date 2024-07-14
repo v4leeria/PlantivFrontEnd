@@ -1,1 +1,29 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
 
+.app-container {
+  display: grid;
+  grid-template-rows: auto 1fr 10vh; /* Navbar, contenido principal y footer */
+  height: 100vh; /* Altura completa de la ventana */
+}
+
+.main-content {
+  padding-top: 2px; /* Añade un poco de padding */
+  overflow-y: auto; /* Agrega scroll si es necesario */
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+  .app-container {
+    grid-template-rows: auto 1fr 10vh; /* Mobile layout */
+  }
+}
+
+@media (min-width: 769px) {
+  .app-container {
+    grid-template-rows: auto 1fr 10vh; /* Tablet and up layout */
+  }
+}

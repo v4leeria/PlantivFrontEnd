@@ -3,13 +3,16 @@
 }
 
 .homeImg {
-  background-image: url("https://images.pexels.com/photos/4068015/pexels-photo-4068015.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+  background-image: url("https://images.pexels.com/photos/4671737/pexels-photo-4671737.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
   width: 100%;
-  height: 20rem;
+  height: 20vh;
   text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 0;
+  color: white;
 }
