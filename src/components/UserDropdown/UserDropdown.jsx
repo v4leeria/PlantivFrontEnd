@@ -10,12 +10,17 @@ import { LinkContainer } from "react-router-bootstrap";
 const UserDropdown = () => {
   return (
     <Dropdown>
-      <DropdownToggle variant="success" id="dropdown-basic">
-        Mi Cuenta
+      <DropdownToggle
+        variant="light"
+        id="dropdown-basic"
+        style={{ borderRadius: "100%", padding: "3px" }}
+        drop="start"
+      >
+        <i className="bi bi-person" style={{ fontSize: "1.5rem" }}></i>
       </DropdownToggle>
 
       <DropdownMenu>
-        <LinkContainer to="/my-plants">
+        <LinkContainer to="/my-plants" variant="success">
           <DropdownItem>Mis Publicaciones</DropdownItem>
         </LinkContainer>
         <LinkContainer to="/profile">

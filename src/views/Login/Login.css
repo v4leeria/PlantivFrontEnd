@@ -1,0 +1,16 @@
+.ContainerLogin {
+  background-color: #dae8d0;
+  max-width: 500px;
+  width: 70%;
+  height: auto;
+  border-radius: 3rem;
+  padding: 2rem;
+  margin-top: 3rem;
+  text-align: center;
+  font-size: small;
+}
+
+input::placeholder {
+  font-size: small; /* Tamaño de fuente del placeholder */
+  color: #888; /* Color del placeholder */
+}

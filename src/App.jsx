@@ -10,21 +10,27 @@ import Profile from "./views/Profile/Profile.jsx";
 import Cart from "./views/Cart/Cart.jsx";
 import MyPlants from "./views/Profile/MyPlants.jsx";
 import Publish from "./views/Publish/Publish.jsx";
+import Footer from "./components/Footer/Footer.jsx";
+import "./App.css";
+import "bootstrap-icons/font/bootstrap-icons.css";
 
 const App = () => {
   return (
-    <div>
+    <div className="app-container">
       <NavbarPlantiv />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/products" element={<Products />} />
-        <Route path="/profile" element={<Profile />} />
-        <Route path="/my-plants" element={<MyPlants />} />
-        <Route path="/cart" element={<Cart />} />
-        <Route path="/publish" element={<Publish />} />
-      </Routes>
+      <div className="main-content">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/products" element={<Products />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/my-plants" element={<MyPlants />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/publish" element={<Publish />} />
+        </Routes>
+      </div>
+      <Footer />
     </div>
   );
 };
