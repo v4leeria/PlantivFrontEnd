@@ -1,0 +1,51 @@
+.cardProfile {
+  width: 100%;
+  max-width: 800px;
+  margin: auto;
+  margin-top: 2rem;
+  border: 1px solid #c1dbaf;
+  text-align: center;
+  font-size: small;
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+.cardProfileFlex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.imagenForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.imgProfile {
+  border-radius: 50%;
+  object-fit: cover;
+  height: 200px;
+  width: 200px;
+  margin-bottom: 1rem;
+}
+.placeholderProfile {
+  font-size: small;
+  color: grey;
+}
+
+@media (min-width: 768px) {
+  .cardProfileFlex {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .imagenForm {
+    margin-right: 2rem;
+  }
+
+  .imgProfile {
+    margin-bottom: 0;
+  }
+}

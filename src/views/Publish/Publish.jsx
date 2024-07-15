@@ -4,14 +4,14 @@ import { useProducts } from "../../context/ProductContext/ProductContext";
 import "./Publish.css";
 
 const Publish = () => {
-  const { addProduct } = useProducts(); // Obtener la función del contexto
+  const { addProduct } = useProducts();
   const [form, setForm] = useState({
     name: "",
     price: "",
     stock_quantity: "",
     description: "",
     img: "",
-    category: "", // Nuevo campo para la categoría
+    category: "",
   });
 
   const handleChange = (e) => {
@@ -30,12 +30,12 @@ const Publish = () => {
       stock_quantity: Number(form.stock_quantity),
       description: form.description,
       img: form.img,
-      category: form.category, // Agregar categoría al nuevo producto
+      category: form.category,
       status: true,
-      userId: 1, // Aquí deberías obtener el ID del usuario autenticado
+      userId: 1,
     };
 
-    addProduct(newProduct); // Agregar el nuevo producto
+    addProduct(newProduct);
     setForm({
       name: "",
       price: "",
@@ -43,7 +43,7 @@ const Publish = () => {
       description: "",
       img: "",
       category: "",
-    }); // Limpiar el formulario
+    });
 
     // Backend
     /*
@@ -130,7 +130,7 @@ const Publish = () => {
             </Form.Control>
           </Form.Group>
           <br />
-          <Button variant="primary" type="submit">
+          <Button variant="success" type="submit">
             Publicar
           </Button>{" "}
         </div>

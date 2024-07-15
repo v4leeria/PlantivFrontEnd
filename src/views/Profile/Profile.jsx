@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { Container, Form } from "react-bootstrap";
-import images from "../../assets/Json/images.json"; // Asegúrate de que la ruta sea correcta
+import { Container, Form, Card } from "react-bootstrap";
+import images from "../../assets/Json/images.json";
+import "./Profile.css";
 
 const Profile = () => {
   const [form, setForm] = useState({
@@ -11,12 +12,26 @@ const Profile = () => {
   });
 
   useEffect(() => {
+    // Simulación
     setForm({
-      name: "Juan",
-      lastName: "Pérez",
-      email: "juan@example.com",
-      imgCustomer: images[0].img, // Asignar una imagen por defecto
+      name: "Valeria",
+      lastName: "Donoso",
+      email: "vdonosin@gmail.com",
+      comuna: "Puente Alto",
+      region: "RM",
+      imgCustomer: images[0].img,
     });
+
+    // Backend
+    /*
+    axios.get('/api/user/profile')
+      .then(response => {
+        setForm(response.data);
+      })
+      .catch(error => {
+        console.error("Error al obtener los datos del usuario:", error);
+      });
+    */
   }, []);
 
   const handleImageChange = (e) => {
@@ -31,38 +46,44 @@ const Profile = () => {
 
   return (
     <Container>
-      <h1>Mi Perfil</h1>
-      <img
-        src={form.imgCustomer}
-        alt="Perfil"
-        style={{ width: "20%", borderRadius: "2rem" }}
-      />
-      <Form>
-        {" "}
-        <Form.Group controlId="formImage">
-          <Form.Label>Seleccionar Imagen</Form.Label>
-          <Form.Control as="select" onChange={handleImageChange}>
-            {images.map((image) => (
-              <option key={image.id} value={image.id}>
-                {`Imagen ${image.id}`}
-              </option>
-            ))}
-          </Form.Control>
-        </Form.Group>
-        <Form.Group controlId="formName">
-          <Form.Label>Nombre</Form.Label>
-          <Form.Control type="text" value={form.name} readOnly />
-        </Form.Group>
-        <Form.Group controlId="formLastName">
-          <Form.Label>Apellido</Form.Label>
-          <Form.Control type="text" value={form.lastName} readOnly />
-        </Form.Group>
-        <Form.Group controlId="formEmail">
-          <Form.Label>Email</Form.Label>
-          <Form.Control type="email" value={form.email} readOnly />
-        </Form.Group>
-        {/* Aquí es donde se agrega el selector de imagen */}
-      </Form>
+      <Card className="cardProfile">
+        <Card.Title style={{ textAlign: "center" }}>Mi Perfil</Card.Title>
+
+        <Card.Body className="cardProfileFlex">
+          <div className="imagenForm">
+            <Card.Img
+              variant="top"
+              src={form.imgCustomer}
+              alt="Perfil"
+              className="imgProfile"
+            />
+            <Form className="formProfile">
+              <Form.Group controlId="formImage">
+                <Form.Label>Editar avatar</Form.Label>
+                <Form.Control
+                  className="placeholderProfile"
+                  as="select"
+                  onChange={handleImageChange}
+                  style={{ width: "min-content" }}
+                >
+                  {images.map((image) => (
+                    <option key={image.id} value={image.id}>
+                      {`Imagen ${image.id}`}
+                    </option>
+                  ))}
+                </Form.Control>
+              </Form.Group>
+            </Form>
+          </div>
+          <div>
+            <strong>Nombre:</strong> <p>{form.name}</p>
+            <strong>Apellido:</strong> <p>{form.lastName}</p>
+            <strong>Email:</strong> <p>{form.email}</p>
+            <strong>Comuna:</strong> <p>{form.comuna}</p>
+            <strong>Región:</strong> <p>{form.region}</p>
+          </div>
+        </Card.Body>
+      </Card>
     </Container>
   );
 };

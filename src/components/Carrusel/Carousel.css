@@ -1,0 +1,10 @@
+.img {
+  width: 60%;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+  .img {
+    width: 80%;
+  }
+}

@@ -3,9 +3,10 @@
   width: 90%;
   max-width: 550px;
   border-radius: 3rem;
-  padding: 2rem;
   text-align: center;
   font-size: small;
+  padding-bottom: 3rem;
+  padding-top: 2rem;
 }
 
 .formRegister {
@@ -15,20 +16,20 @@
 }
 
 input::placeholder {
-  font-size: small; /* Tamaño de fuente del placeholder */
-  color: #888; /* Color del placeholder */
+  font-size: small;
+  color: #888;
 }
 
 textarea::placeholder {
-  font-size: medium; /* Tamaño de fuente del placeholder */
-  color: #888; /* Color del placeholder */
+  font-size: medium;
+  color: #888;
 }
 
-/* Estilos responsivos */
 @media (min-width: 768px) {
   .formRegister {
     font-size: large;
     display: flex;
     justify-content: center;
+    font-size: small;
   }
 }

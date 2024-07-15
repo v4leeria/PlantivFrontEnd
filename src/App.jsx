@@ -1,4 +1,3 @@
-// src/App.js
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import NavbarPlantiv from "./components/Navbar/Navbar.jsx";
@@ -13,6 +12,7 @@ import Publish from "./views/Publish/Publish.jsx";
 import Footer from "./components/Footer/Footer.jsx";
 import "./App.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
+import Detail from "./views/Detail/Detail.jsx";
 
 const App = () => {
   return (
@@ -24,6 +24,7 @@ const App = () => {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/products" element={<Products />} />
+          <Route path="/product/:id" element={<Detail />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/my-plants" element={<MyPlants />} />
           <Route path="/cart" element={<Cart />} />

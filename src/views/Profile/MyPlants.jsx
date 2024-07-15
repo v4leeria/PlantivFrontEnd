@@ -4,13 +4,11 @@ import { useProducts } from "../../context/ProductContext/ProductContext";
 
 const MyPlants = () => {
   const [products, setProducts] = useState([]);
-  const { getUserProducts } = useProducts(); // Obtener función del contexto
+  const { getUserProducts } = useProducts();
 
-  // Suponiendo que el ID del usuario autenticado es 1
-  const userId = 1; // Aquí deberías obtener el ID del usuario autenticado
+  const userId = 1;
 
   useEffect(() => {
-    // Obtener los productos del usuario específico
     const userProducts = getUserProducts(userId);
     setProducts(userProducts);
 
@@ -42,9 +40,7 @@ const MyPlants = () => {
                 <Card.Text>
                   Estado: {product.status ? "Activo" : "Inactivo"}
                 </Card.Text>
-                <Card.Text>
-                  Categoría: {product.category} {/* Mostrar la categoría */}
-                </Card.Text>
+                <Card.Text>Categoría: {product.category}</Card.Text>
               </Card.Body>
             </Card>
           </Col>
