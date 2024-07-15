@@ -9,7 +9,11 @@ function NavbarPlantiv() {
     <Navbar className="Navbar" expand="lg">
       <Container className="containerNavbar">
         <Navbar.Brand as={NavLink} to="/" style={{ color: "black" }}>
-          PLANTIV
+          <img
+            src="../../src/assets/img/Plantiv.png"
+            alt=""
+            style={{ width: "100px" }}
+          />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">

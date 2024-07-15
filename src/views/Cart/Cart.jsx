@@ -1,14 +1,15 @@
 import React from "react";
 import { useCart } from "../../context/CartContext/CartContext";
-import { Table, Button } from "react-bootstrap";
+import { Table, Button, Container, Row, Col } from "react-bootstrap";
+import "./Cart.css";
 
 const Cart = () => {
   const { cartItems, totalAmount, removeFromCart, checkout } = useCart();
 
   return (
-    <div>
-      <h1>Mi Carrito</h1>
-      <Table striped bordered hover>
+    <Container className="carrito">
+      <h1 className="cartTitle">Mi Carrito</h1>
+      <Table className="cartTable">
         <thead>
           <tr>
             <th>Producto</th>
@@ -27,6 +28,7 @@ const Cart = () => {
                 <Button
                   variant="danger"
                   onClick={() => removeFromCart(item.id)}
+                  className="btnRemove"
                 >
                   Eliminar
                 </Button>
@@ -35,11 +37,17 @@ const Cart = () => {
           ))}
         </tbody>
       </Table>
-      <h3>Total: ${totalAmount}</h3>
-      <Button variant="success" onClick={checkout}>
-        Comprar
-      </Button>
-    </div>
+      <Row className="totalRow">
+        <Col className="totalAmount">
+          <p>Total: ${totalAmount}</p>
+        </Col>
+        <Col className="checkoutButton">
+          <Button variant="success" onClick={checkout}>
+            Comprar
+          </Button>
+        </Col>
+      </Row>
+    </Container>
   );
 };
 

@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { Card, Container, Row, Col } from "react-bootstrap";
-import productsData from "../../assets/Json/products.json"; // Importar JSON para pruebas
+import productsData from "../../assets/Json/products.json";
 import { useNavigate } from "react-router-dom";
 import { ButtonGeneral } from "../../components/Buttons/ButtonGeneral";
 import { useCart } from "../../context/CartContext/CartContext";
-import axios from "axios"; // Para realizar solicitudes HTTP
+import axios from "axios";
+import "./Products.css";
 
 const Products = () => {
   const [products, setProducts] = useState([]);
@@ -12,10 +13,10 @@ const Products = () => {
   const { addToCart } = useCart();
 
   useEffect(() => {
-    // Simular la obtención de productos desde un archivo JSON
+    // Simular productos desde un JSON
     setProducts(productsData);
 
-    // Obtener productos desde el backend
+    // Backend
     /*
     axios.get('/api/products')
       .then(response => {
@@ -36,11 +37,12 @@ const Products = () => {
       <Row>
         {products.map((product) => (
           <Col key={product.id} sm={12} md={6} lg={3}>
-            <Card className="mb-4">
-              <Card.Img variant="top" src={product.image} />
+            <Card className="mb-3 cardProduct">
+              <Card.Img src={product.image} className="imgProduct" />
               <Card.Body>
-                <Card.Title>{product.name}</Card.Title>
-                <Card.Text>{product.description}</Card.Text>
+                <Card.Title style={{ fontSize: "medium" }}>
+                  {product.name}
+                </Card.Title>
                 <Card.Text>${product.price}</Card.Text>
                 <div className="divButtonsCard">
                   <ButtonGeneral

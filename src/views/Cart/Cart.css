@@ -1,0 +1,54 @@
+.carrito {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.cartTitle {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.cartTable {
+  margin-bottom: 2rem;
+  max-width: 800px;
+  text-align: center;
+  font-size: small;
+  border: 1px solid #c1dbaf;
+}
+
+.btnRemove {
+  width: min-content;
+  font-size: small;
+}
+
+.totalRow {
+  min-width: 350px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.totalAmount {
+  font-size: medium;
+  font-weight: bold;
+}
+
+.checkoutButton {
+  text-align: right;
+  font-size: x-small;
+}
+
+@media (min-width: 768px) {
+  .totalRow {
+    justify-content: first baseline;
+  }
+
+  .totalAmount {
+    margin-right: 2rem;
+  }
+}

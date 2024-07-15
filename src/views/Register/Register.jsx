@@ -123,7 +123,7 @@ const Register = () => {
                   required
                 />
               </Form.Group>
-              <Button variant="primary" type="submit" className="mt-3">
+              <Button variant="success" type="submit" className="mt-3">
                 Register
               </Button>{" "}
             </div>

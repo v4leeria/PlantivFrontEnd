@@ -2,8 +2,8 @@ import React, { useState, useContext } from "react";
 import { Form, Button, Container, Row, Col, Alert } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { UserContext } from "../../context/UserContext/UserContext";
-import login from "../../assets/Json/login.json"; // Importar JSON para pruebas
-import axios from "axios"; // Para solicitudes HTTP
+import login from "../../assets/Json/login.json";
+import axios from "axios";
 import "./Login.css";
 
 const Login = () => {
@@ -14,8 +14,8 @@ const Login = () => {
   const navigate = useNavigate();
 
   const handleChange = (e) => {
-    console.log(e.target.name); // Para depuración
-    console.log(e.target.value); // Para depuración
+    console.log(e.target.name);
+    console.log(e.target.value);
     setForm({
       ...form,
       [e.target.name]: e.target.value,
@@ -25,33 +25,22 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      // Simulación de inicio de sesión con un JSON de prueba
+      // Simulación
       if (form.email === login.email && form.password === login.password) {
-        const token = "fakeToken"; // Simulación de un token
-        const userId = 1; // Simulación de un ID de usuario
-        const userRole = "user"; // Simulación de un rol de usuario
+        const token = "fakeToken";
+        const userId = 1;
+        const userRole = "user";
 
         saveToken(token);
         setUserId(userId);
         setRole(userRole);
-        navigate("/products"); // Redirigir a la página principal
+        navigate("/products");
       } else {
-        setError("Credenciales incorrectas"); // Mostrar error si no coinciden
+        setError("Credenciales incorrectas");
       }
-
-      // En una implementación real, realiza una solicitud de inicio de sesión al backend
-      /*
-      const response = await axios.post('/api/login', form);
-      const { token, userId, userRole } = response.data;
-
-      saveToken(token);
-      setUserId(userId);
-      setRole(userRole);
-      navigate("/products"); // Redirigir a la página principal
-      */
     } catch (error) {
-      setError("No pasar"); // La respuesta del alert viene del backend
-      console.error(error); // Imprimir error en la consola
+      setError("No pasar");
+      console.error(error);
     }
   };
 
@@ -86,7 +75,7 @@ const Login = () => {
               />
             </Form.Group>
 
-            <Button variant="primary" type="submit" className="mt-3">
+            <Button variant="success" type="submit" className="mt-3">
               Login
             </Button>
           </Form>

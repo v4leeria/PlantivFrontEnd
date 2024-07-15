@@ -1,0 +1,19 @@
+.cardDetail {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  text-align: center;
+  align-items: center;
+  padding: 2rem;
+  gap: 1rem;
+  border: 1px solid #c1dbaf;
+}
+
+@media (max-width: 768px) {
+  .cardDetail {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+}

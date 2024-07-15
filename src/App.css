@@ -2,28 +2,28 @@ html,
 body {
   height: 100%;
   margin: 0;
+  font-family: "Nunito", sans-serif;
 }
 
 .app-container {
   display: grid;
-  grid-template-rows: auto 1fr 10vh; /* Navbar, contenido principal y footer */
-  height: 100vh; /* Altura completa de la ventana */
+  grid-template-rows: auto 1fr 10vh;
+  height: 100vh;
 }
 
 .main-content {
-  padding-top: 2px; /* Añade un poco de padding */
-  overflow-y: auto; /* Agrega scroll si es necesario */
+  padding-top: 2px;
+  overflow-y: auto;
 }
 
-/* Estilos responsivos */
 @media (max-width: 768px) {
   .app-container {
-    grid-template-rows: auto 1fr 10vh; /* Mobile layout */
+    grid-template-rows: auto 1fr 10vh;
   }
 }
 
 @media (min-width: 769px) {
   .app-container {
-    grid-template-rows: auto 1fr 10vh; /* Tablet and up layout */
+    grid-template-rows: auto 1fr 10vh;
   }
 }

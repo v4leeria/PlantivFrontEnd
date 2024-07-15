@@ -1,4 +1,3 @@
-// src/pages/Home/Home.jsx
 import React from "react";
 import { ButtonGeneral } from "../../components/Buttons/ButtonGeneral";
 import { useNavigate } from "react-router-dom";

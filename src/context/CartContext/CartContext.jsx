@@ -54,7 +54,7 @@ export const CartProvider = ({ children }) => {
 
     setCartItems(updatedCartItems);
     calculateTotal(updatedCartItems);
-
+    alert("Producto agregado al carrito");
     // Simular agregar item al carrito en el backend
     console.log("Producto agregado al carrito:", {
       userId,
@@ -118,6 +118,7 @@ export const CartProvider = ({ children }) => {
 
     setCartItems([]);
     setTotalAmount(0);
+    alert("¡Su compra se realizó con éxito!");
   };
 
   return (
