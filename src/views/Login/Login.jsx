@@ -52,25 +52,25 @@ const Login = () => {
           {error && <Alert variant="danger">{error}</Alert>}
           <Form onSubmit={handleSubmit}>
             <Form.Group controlId="formEmail">
-              <Form.Label>Email address</Form.Label>
+              <Form.Label>Email</Form.Label>
               <Form.Control
                 type="email"
                 name="email"
                 value={form.email}
                 onChange={handleChange}
-                placeholder="Enter email"
+                placeholder="Ingresar email"
                 required
               />
             </Form.Group>
 
             <Form.Group controlId="formPassword">
-              <Form.Label>Password</Form.Label>
+              <Form.Label>Constraeña</Form.Label>
               <Form.Control
                 type="password"
                 name="password"
                 value={form.password}
                 onChange={handleChange}
-                placeholder="Password"
+                placeholder="Ingresar contraseña"
                 required
               />
             </Form.Group>
